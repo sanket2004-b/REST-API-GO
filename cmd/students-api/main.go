@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"REST-API-GO/internal/config/config.go"
+	"github.com/sanket2004-b/REST-API-GO/internal/config"
 )
 
 func main() {
@@ -13,7 +13,7 @@ func main() {
 	router := http.NewServeMux()
 
 	server := http.Server{
-		Addr:    cfg.Addr,
+		Addr:    cfg.Address,
 		Handler: router,
 	}
 	err := server.ListenAndServe()
